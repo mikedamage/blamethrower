@@ -1,0 +1,12 @@
+h1. BlameThrower
+
+_A Vindictive Exercise In Social Application Development_
+
+* by Mike Green ("mike.is.green@gmail.com":mailto:mike.is.green@gmail.com?subject=BlameThrower)
+* All code is open source via the MIT License
+
+h2. About BlameThrower
+
+BlameThrower is a little application I dreamed up one day at work. It's a small social web application, powered by Sinatra, that lets you tell the world (or just your coworkers, depending on where it's running) when someone else is wrong. It supports JSON-RPC, and I plan to create a cross-platform BlameThrower client using Appcelerator Titanium. Simply login via the client, select your coworker from a dropdown, provide an optional explanation, and blame them!
+
+BlameThrower keeps detailed records of how many times each member is wrong, and will be able to display graphs, statistics, and rankings... once I get around to it.
