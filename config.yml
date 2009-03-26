@@ -1,7 +1,0 @@
-database:
-  development:
-    adapter: "sqlite"
-    database: "/Users/mike/Development/Projects/blamethrower/db/blamethrower.db"
-  production:
-    adapter: "sqlite"
-    database: "/Users/mike/Development/Projects/blamethrower/db/blamethrower.db"
