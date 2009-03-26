@@ -1,0 +1,26 @@
+/* -----------------------------------------------------------------------
+
+
+ Blueprint CSS Framework 0.8
+ http://blueprintcss.org
+
+   * Copyright (c) 2007-Present. See LICENSE for more info.
+   * See README for instructions on how to use Blueprint.
+   * For credits and origins, see AUTHORS.
+   * This is a compressed file. See the sources in the 'src' directory.
+
+----------------------------------------------------------------------- */
+
+/* ie.css */
+body {text-align:center;}
+.bt_container {text-align:left;}
+* html .bt_column, * html div.bt_span-1, * html div.bt_span-2, * html div.bt_span-3, * html div.bt_span-4, * html div.bt_span-5, * html div.bt_span-6, * html div.bt_span-7, * html div.bt_span-8, * html div.bt_span-9, * html div.bt_span-10, * html div.bt_span-11, * html div.bt_span-12, * html div.bt_span-13, * html div.bt_span-14, * html div.bt_span-15, * html div.bt_span-16, * html div.bt_span-17, * html div.bt_span-18, * html div.bt_span-19, * html div.bt_span-20, * html div.bt_span-21, * html div.bt_span-22, * html div.bt_span-23, * html div.bt_span-24 {overflow-x:hidden;}
+* html legend {margin:0px -8px 16px 0;padding:0;}
+ol {margin-left:2em;}
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+html>body p code {*white-space:normal;}
+hr {margin:-8px auto 11px;}
+.bt_clearfix, .bt_container {display:inline-block;}
+* html .bt_clearfix, * html .bt_container {height:1%;}
+fieldset {padding-top:0;}

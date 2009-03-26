@@ -13,7 +13,7 @@ configure do
 	ActiveRecord::Base.establish_connection(CONFIG['db'][Sinatra::Application.environment.to_s])
 	
 	(ROOT + "models").children.each {|model| require model }
-	require 'sessionauth'
+	require 'lib/sessionauth'
 	include Sinatra::SessionAuth
 	Sinatra::Application.register Sinatra::SessionAuth
 end

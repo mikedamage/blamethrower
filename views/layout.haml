@@ -2,12 +2,17 @@
 !!!
 %html{:xmlns=>'http://www.w3.org/1999/xhtml', :'xml:lang'=>'en', :lang=>'en'}
   %head
-    %title= "BlameThrower // Vindictive Social Networking"
+    %title BlameThrower // Vindictive Social Networking
     %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/stylesheets/screen.css", :media=>"screen, projection"}
+    %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/stylesheets/print.css", :media=>"print"}
+    %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/stylesheets/jquery.ui.css", :media=>"screen, projection"}
+    %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/stylesheets/blamethrower.css", :media=>"screen, projection"}
+    %script{:type=>"text/javascript", :charset=>"utf-8", :src=>"/javascripts/jquery.js"}
+    %script{:type=>"text/javascript", :charset=>"utf-8", :src=>"/javascripts/jquery.ui.js"}
   %body
-    .container
-      .header
+    %div{:class=>"container"}
+      %div{:class=>"header span-24"}
         %h1 BlameThrower
         %em Vindictive Social Networking
-      .main
+      %div{:class=>"main span-24"}
         = yield
