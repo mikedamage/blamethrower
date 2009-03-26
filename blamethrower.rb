@@ -3,6 +3,8 @@ require 'pathname'
 require 'rubygems'
 require 'sinatra'
 require 'activerecord'
+require 'haml'
+require 'sass'
 
 configure do
 	set :sessions, :true
@@ -18,9 +20,15 @@ configure do
 	Sinatra::Application.register Sinatra::SessionAuth
 end
 
+helpers do
+	
+end
+
 get "/" do
 	@user = current_user
 	if @user
+		@blames_from_others = Blame.find(:all, :conditions => {:target_user => @user.id})
+		@my_blames = Blame.find(:all, :conditions => {:user_id => @user.id})
 		haml :home
 	else
 		haml :index

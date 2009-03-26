@@ -51,6 +51,7 @@ module Sinatra
 			
 			app.get '/logout' do
 				logout!
+				session[:flash] = "Logout Successful"
 				redirect '/'
 			end
 			

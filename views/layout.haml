@@ -14,5 +14,13 @@
       %div{:class=>"header bt_span-24"}
         %h1 BlameThrower
         %em Vindictive Social Networking
+        %ul{:id=>"nav"}
+          %li
+            - if current_user
+              %a{:href=>"/logout"} Logout
+            - else
+              %a{:href=>"/login"} Login
+          %li
+            %a{:href=>"/signup"} Signup
       %div{:class=>"main bt_span-24"}
         = yield

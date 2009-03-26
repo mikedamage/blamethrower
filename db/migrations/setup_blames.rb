@@ -3,7 +3,7 @@ class SetupBlames < ActiveRecord::Migration
 		create_table :blames do |t|
 			t.integer :user_id
 			t.integer :target_user
-			t.string	:description
+			t.string	:reason
 			t.timestamps
 		end
 	end
