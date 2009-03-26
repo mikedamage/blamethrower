@@ -16,6 +16,14 @@ module Sinatra
       def logout!
         session[:authorized] = false
       end
+			
+			def current_user
+				if session[:authorized]
+					User.find(session[:user_id])
+				else
+					nil
+				end
+			end
     end
 
     def self.registered(app)
@@ -40,6 +48,11 @@ module Sinatra
           redirect '/login'
         end
       end
+			
+			app.get '/logout' do
+				logout!
+				redirect '/'
+			end
 			
 			app.get '/signup' do
 				@flash = session[:flash] ? session[:flash] : ""

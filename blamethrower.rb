@@ -19,10 +19,23 @@ configure do
 end
 
 get "/" do
-	@user = session[:authorized] ? User.find(:first, :conditions => {:id => session[:user_id]}) : nil
+	@user = current_user
 	if @user
 		haml :home
 	else
 		haml :index
+	end
+end
+
+get "/sass/:format/:file" do
+	content_type 'text/css', :charset => 'utf-8'
+	@file = Pathname.new("./views/" + (params[:file] + ".sass"))
+
+	if @file.exist?
+		@format = params[:format].intern
+		@sass = Sass::Engine.new(@file.read, {:style => @format})
+		@sass.render
+	else
+		raise not_found, "Sass stylesheet not found."
 	end
 end

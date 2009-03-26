@@ -6,13 +6,13 @@
     %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/stylesheets/screen.css", :media=>"screen, projection"}
     %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/stylesheets/print.css", :media=>"print"}
     %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/stylesheets/jquery.ui.css", :media=>"screen, projection"}
-    %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/stylesheets/blamethrower.css", :media=>"screen, projection"}
+    %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/sass/expanded/styles", :media=>"screen, projection"}
     %script{:type=>"text/javascript", :charset=>"utf-8", :src=>"/javascripts/jquery.js"}
     %script{:type=>"text/javascript", :charset=>"utf-8", :src=>"/javascripts/jquery.ui.js"}
   %body
-    %div{:class=>"container"}
-      %div{:class=>"header span-24"}
+    %div{:class=>"bt_container"}
+      %div{:class=>"header bt_span-24"}
         %h1 BlameThrower
         %em Vindictive Social Networking
-      %div{:class=>"main span-24"}
+      %div{:class=>"main bt_span-24"}
         = yield
