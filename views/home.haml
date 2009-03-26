@@ -5,13 +5,24 @@
   %ul{:id=>"blames_from_others"}
   - @blames_from_others.each do |blame|
     %li
-      %ul
-        %li
-          %strong From: 
-          = "<a href=\"/user/#{blame.user.name}\">#{blame.user.name}</a>"
-        %li
-          %strong Reason: 
-          - unless blame.reason.empty?
-            = blame.reason
-          - else
-            %em none given
+      = "<a href=\"/user/#{blame.user.name}\">#{blame.user.name}</a> blames you for: "
+      - unless blame.reason.empty?
+        = blame.reason
+      - else
+        %em no reason given (but you probably know what you did - don't play dumb).
+- else
+  %p Congratulations, you are blameless! Let he who is without sin cast the first stone!
+
+%h2 You Blamed
+- if @my_blames
+  %ul
+    - @my_blames.each do |blame|
+      %li
+        = "<a href=\"/user/#{blame.target_user_name}\">#{blame.target_user_name}</a> for: "
+        - unless blame.reason.empty?
+          = blame.reason
+        - else
+          %em no reason given
+- else
+  %p Nobody for anything
+  
