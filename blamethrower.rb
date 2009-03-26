@@ -19,5 +19,10 @@ configure do
 end
 
 get "/" do
-	"BlameThrower"
+	@user = session[:authorized] ? User.find(:first, :conditions => {:id => session[:user_id]}) : nil
+	if @user
+		haml :home
+	else
+		haml :index
+	end
 end

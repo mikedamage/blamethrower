@@ -8,9 +8,8 @@ class User < ActiveRecord::Base
 		nil
 	end
 	
-	def password=(pass)
-		password = User.encrypt(pass)
-		self.password = password
+	def before_save
+		self.password = User.encrypt(self.password)
 	end
 	
 	protected

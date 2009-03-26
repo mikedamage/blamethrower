@@ -22,23 +22,27 @@ module Sinatra
       app.helpers SessionAuth::Helpers
 
       app.get '/login' do
+				@flash = session[:flash] ? session[:flash] : ""
         haml :login
       end
 
       app.post '/login' do
-				@user = User.find(:first, :conditions => {:name => params[:user]})
+				@user = User.find(:first, :conditions => {:name => params[:name]})
 				crypted_password = Digest::SHA1.hexdigest(params[:pass])
-        if @user && @user.password == crypted_password
+        if @user.password == crypted_password
           session[:authorized] = true
+					session[:user_id] = @user.id
 					session[:flash] = "Welcome, #{@user.name}!"
           redirect '/'
         else
           session[:authorized] = false
+					session[:flash] = "Login Error. Please Try Again!"
           redirect '/login'
         end
       end
 			
 			app.get '/signup' do
+				@flash = session[:flash] ? session[:flash] : ""
 				haml :signup
 			end
 			
@@ -48,10 +52,11 @@ module Sinatra
 				pass_confirm = params[:pass_confirm]
 				email = params[:email]
 				if pass == pass_confirm
-					user = User.new
-					user.name = name
-					user.password = password
-					user.email = email
+					user = User.new({
+						:name => name,
+						:email => email,
+						:password => pass
+					})
 					if user.save
 						session[:flash] = "Signup successful! Try logging in now."
 						redirect '/login'
