@@ -5,6 +5,8 @@ _A Vindictive Exercise In Social Application Development_
 * by Mike Green ("mike.is.green@gmail.com":mailto:mike.is.green@gmail.com?subject=BlameThrower)
 * All code is open source via the MIT License
 
+*BlameThrower* is a new social web application that allows you to let no stupid decision or opinion go unridiculed. Every 5 seconds in the United States, someone is wrong. It's time that we recognize the wrongness of our peers, and, if we're feeling introspective, of ourselves! Sign up for an account now, fire up the BlameThrower, and drench your peers in the burning hot napalm of ridicule.
+
 h2. About BlameThrower
 
 BlameThrower is a little application I dreamed up one day at work. It's a small social web application, powered by Sinatra, that lets you tell the world (or just your coworkers, depending on where it's running) when someone else is wrong. It supports JSON-RPC, and I plan to create a cross-platform BlameThrower client using Appcelerator Titanium. Simply login via the client, select your coworker from a dropdown, provide an optional explanation, and blame them!
