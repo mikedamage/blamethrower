@@ -1,0 +1,15 @@
+%h2 Signup
+%form{:class=>"signup", :action=>"/signup", :method=>"post"}
+  %p
+    %label Username
+    %input{:type=>"text", :name=>"name", :id=>"name"}
+  %p
+    %label Email
+    %input{:type=>"text", :name=>"email", :id=>"email"}
+  %p
+    %label Password
+    %input{:type=>"password", :name=>"pass", :id=>"pass"}
+  %p
+    %label Confirm Password
+    %input{:type=>"password", :name=>"pass_confirm", :id=>"pass_confirm"}
+  %input{:type=>"submit", :value=>"Signup"}

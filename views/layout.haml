@@ -1,0 +1,13 @@
+!!! XML
+!!!
+%html{:xmlns=>'http://www.w3.org/1999/xhtml', :'xml:lang'=>'en', :lang=>'en'}
+  %head
+    %title= "BlameThrower // Vindictive Social Networking"
+    %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/stylesheets/screen.css", :media=>"screen, projection"}
+  %body
+    .container
+      .header
+        %h1 BlameThrower
+        %em Vindictive Social Networking
+      .main
+        = yield

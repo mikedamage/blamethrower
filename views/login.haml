@@ -1,0 +1,9 @@
+%h2 Login
+%form{:class=>"login", :method=>"post", :action=>"/login"}
+  %p
+    %label Name
+    %input{:type=>"text", :name=>"name", :id=>"name"}
+  %p
+    %label Password
+    %input{:type=>"password", :name=>"pass", :id=>"pass"}
+  %input{:type=>"submit", :value=>"login"}
