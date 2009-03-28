@@ -1,9 +1,22 @@
 require 'sinatra/base'
+require 'erb'
 require 'digest'
+require 'pony'
 
 module Sinatra
   module SessionAuth
+		WELCOME_MSG = <<-END
+Hello, <%= name %>, and welcome to the BlameThrower community!	
+Please hold onto this information for your records.
 
+User Name: <%= name %>
+Email: <%= email %>
+Password: <%= pass %>
+
+Happy Blaming!
+
+- The BlameThrower Team
+END
     module Helpers
       def authorized?
         session[:authorized]
@@ -72,6 +85,17 @@ module Sinatra
 						:password => pass
 					})
 					if user.save
+						# TODO: Use the Pony gem to send a confirmation email w/ password before it's irreversibly encrypted.
+						if Sinatra::Application.environment.to_s == "production"
+							welcome_message = ERB.new(WELCOME_MSG).result(binding)
+							# Pony.mail({
+							# 								:to => email,
+							# 								:from => "mike@fifthroomcreative.com",
+							# 								:via => :sendmail,
+							# 								:subject => "Welcome to BlameThrower",
+							# 								:body => welcome_message
+							# 							})
+						end
 						session[:flash] = "Signup successful! Try logging in now."
 						redirect '/login'
 					else
